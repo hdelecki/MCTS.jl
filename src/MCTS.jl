@@ -5,6 +5,7 @@ using POMDPTools
 using Random
 using Printf
 using ProgressMeter
+using StatsFuns: logsumexp, softmax
 using POMDPLinter: @show_requirements, requirements_info, @POMDP_require, @req, @subreq
 import POMDPLinter
 
@@ -14,7 +15,9 @@ export
     DPWSolver,
     DPWPlanner,
     BeliefMCTSSolver,
+    ERMCTSSolver,
     AbstractMCTSPlanner,
+    ERMCTSPlanner,
     AbstractMCTSSolver,
     solve,
     action,
@@ -56,6 +59,7 @@ include("action_gen.jl")
 include("util.jl")
 include("default_action.jl")
 include("belief_mcts.jl")
+include("maxent.jl")
 
 include("visualization.jl")
 
